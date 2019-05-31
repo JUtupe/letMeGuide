@@ -35,4 +35,14 @@ class AttractionController @Autowired constructor(private val attractionService:
     @DeleteMapping("attraction/{id}")
     fun deleteAttraction(@PathVariable("id") id: String) =
             attractionService.deleteAttraction(id)
+
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping("attraction/{id}/image")
+    fun addImage(@PathVariable("id") id: String, @RequestBody imagePath: String) =
+            attractionService.addImage(id, imagePath)
+
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("attraction/{id}/image/{imageId}")
+    fun deleteImage(@PathVariable("id") id: String, @PathVariable("imageId") imageId: String) =
+            attractionService.deleteImage(id, imageId)
 }

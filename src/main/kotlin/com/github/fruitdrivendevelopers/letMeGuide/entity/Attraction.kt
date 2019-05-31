@@ -14,9 +14,15 @@ class Attraction {
     @CreationTimestamp
     var creationDate: Date = Date()
 
-    @OneToMany(targetEntity = AttractionDescription::class)
-    var descriptions: MutableList<AttractionDescription> = mutableListOf()
+    @Column
+    var pageUrl: String? = null
 
     @Embedded
     var location: Location? = null
+
+    @OneToMany(targetEntity = AttractionImage::class)
+    var images: MutableList<AttractionImage> = mutableListOf()
+
+    @OneToMany(targetEntity = AttractionDescription::class)
+    var descriptions: MutableList<AttractionDescription> = mutableListOf()
 }
