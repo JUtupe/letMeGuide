@@ -14,7 +14,9 @@ class AttractionDescription {
     var id: String = UUID.randomUUID().toString()
     var language: Language? = null
     var name: String? = null
+    @Column(length = 3000)
     var description: String? = null
+    @Column(length = 3000)
     var history: String? = null
     var author: String? = null
 }
