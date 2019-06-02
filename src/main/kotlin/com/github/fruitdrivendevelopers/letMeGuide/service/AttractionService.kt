@@ -58,6 +58,7 @@ class AttractionService @Autowired constructor(
         attraction.descriptions.forEach {
             attractionDescriptionRepository.delete(it)
         }
+        attraction.descriptions = mutableListOf()
 
         attractionRepository.delete(attraction)
     }
