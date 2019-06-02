@@ -83,4 +83,10 @@ class AttractionService @Autowired constructor(
         attractionImageRepository.delete(image)
         attractionRepository.save(attraction)
     }
+
+    fun deleteDescription(id: String) {
+        val description = attractionDescriptionRepository.findByIdOrNull(id) ?: TODO("throw here")
+
+        attractionDescriptionRepository.delete(description)
+    }
 }
